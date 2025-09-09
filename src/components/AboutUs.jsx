@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 
@@ -34,18 +34,19 @@ const AboutUs = () => {
   };
 
   return (
-    <section className="py-40 bg-[#050505]">
+    <section className="py-20 sm:py-28 md:py-40 bg-[#050505]">
+      {/* Text Section */}
       <motion.div
-        className="px-20"
+        className="px-6 sm:px-10 md:px-20 text-center md:text-left"
         variants={container}
         initial="hidden"
-        whileInView="visible"   // ✅ runs only when in view
-        viewport={{ once: true, amount: 0.9 }} // trigger when 30% is visible
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
       >
         {/* Heading */}
         <motion.h1
           variants={item}
-          className="text-white text-[60px] leading-none font-thin"
+          className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-thin"
         >
           We Don’t Just Design for the Present —{" "}
           <span className="text-[#999999]">
@@ -56,7 +57,7 @@ const AboutUs = () => {
         {/* Paragraph */}
         <motion.p
           variants={item}
-          className="text-[#717171] py-14 mx-auto max-w-3xl text-center"
+          className="text-[#717171] py-8 sm:py-10 md:py-14 mx-auto md:mx-0 max-w-xl sm:max-w-2xl md:max-w-3xl text-sm sm:text-base md:text-lg"
         >
           Specializing in creating visually captivating designs that leave a
           lasting impression by transforming your ideas into stunning visuals.
@@ -66,12 +67,12 @@ const AboutUs = () => {
       </motion.div>
 
       {/* Logos */}
-      <div>
+      <div className="mt-8 sm:mt-12 md:mt-16">
         <Marquee gradient={false} speed={50}>
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="flex items-center justify-center mx-4 border border-[#121212] rounded-xl w-48 h-48"
+              className="flex items-center justify-center mx-3 sm:mx-4 border border-[#121212] rounded-xl w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48"
             >
               <img
                 loading="lazy"

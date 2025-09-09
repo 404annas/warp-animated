@@ -10,7 +10,7 @@ import WorksAnimation from '../components/WorksAnimation';
 const HomePage = () => {
   return (
     <div>
-      <Hero />
+      {/* <Hero /> */}
       <AboutUs />
       <Works />
       <WorksAnimation />

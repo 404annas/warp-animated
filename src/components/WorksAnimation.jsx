@@ -28,12 +28,13 @@ const WorksAnimation = () => {
             {images.map((item, i) => (
                 <section
                     key={i}
-                    className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+                    className="relative min-h-[80vh] sm:min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden px-2 py-20"
                 >
                     {/* Image */}
                     <img
                         loading="lazy"
-                        className="w-[800px] h-[400px] object-cover"
+                        className="w-full max-w-[95%] sm:max-w-[80%] lg:max-w-[65%] 
+                       h-[300px] sm:h-[500px] rounded-xl object-cover shadow-lg"
                         src={item.src}
                         alt={item.text}
                     />
@@ -47,12 +48,15 @@ const WorksAnimation = () => {
                             pauseOnHover={false}
                             className="w-full overflow-hidden"
                         >
-                            {/* Repeat same colored text multiple times for infinite flow */}
                             {Array.from({ length: 10 }).map((_, idx) => (
                                 <h1
                                     key={idx}
                                     style={{ color: item.color }}
-                                    className="text-6xl font-bold uppercase tracking-wider mx-8 leading-none"
+                                    className="
+                    text-3xl sm:text-5xl md:text-6xl lg:text-8xl
+                    font-bold uppercase tracking-wider mx-6 sm:mx-8
+                    leading-none text-center
+                  "
                                 >
                                     {item.text}
                                 </h1>
