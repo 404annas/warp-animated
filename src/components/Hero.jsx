@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CornerRightDown } from "lucide-react";
 
 const words = ["Warp®", "Studio"];
 
@@ -49,12 +48,12 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative bg-[#050505] min-h-screen text-white flex flex-row justify-center gap-12 px-12 pt-52">
-      {/* Fullscreen hover image ABOVE text */}
+    <section className="relative bg-[#050505] min-h-screen text-white flex flex-col md:flex-row justify-center gap-8 md:gap-10 px-4 sm:px-6 md:px-4 pt-24 md:pt-52">
+      {/* Fullscreen hover image */}
       <AnimatePresence>
         {hoveredImg && (
           <motion.div
-            className="fixed inset-0 z-40 pointer-events-none" // Make overlay non-interactive
+            className="fixed inset-0 z-40 pointer-events-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -64,42 +63,33 @@ const Hero = () => {
               alt="Preview"
               className="w-full h-full object-cover"
             />
-            {/* Arrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
-            >
-              <CornerRightDown size={60} />
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Left images */}
-      <div className="flex flex-col gap-10 relative z-50">
+      <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-4 md:gap-10 relative z-50 justify-center">
         {imagesLeft.map((src, i) => (
           <img
             key={i}
             onMouseEnter={() => setHoveredImg(src)}
             onMouseLeave={() => setHoveredImg(null)}
-            className="w-40 h-32 object-cover cursor-pointer"
+            className="w-28 h-20 sm:w-32 sm:h-24 md:w-32 md:h-32 object-cover cursor-pointer"
             src={src}
             alt={`Image ${i + 1}`}
           />
         ))}
       </div>
 
-      {/* Text column (below the fullscreen image) */}
+      {/* Text column */}
       <div className="flex-1 flex flex-col items-center relative z-10">
         <div className="sticky top-1/2 -translate-y-1/2 text-center">
-          <div className="h-[190px] w-[900px] flex items-center justify-center overflow-hidden">
+          <div className="flex items-center justify-center overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.h2
                 key={words[index]}
-                className="text-[180px] leading-none font-bold uppercase text-[#F5F5F5] flex justify-center"
+                className="font-bold uppercase text-[#F5F5F5] flex justify-center
+                text-5xl sm:text-7xl md:text-[120px] lg:text-[180px] leading-none"
                 variants={container}
                 initial="hidden"
                 animate="visible"
@@ -113,7 +103,7 @@ const Hero = () => {
               </motion.h2>
             </AnimatePresence>
           </div>
-          <p className="max-w-sm text-center mx-auto text-[#D9D9D9] pt-4">
+          <p className="max-w-xs sm:max-w-md text-center mx-auto text-[#D9D9D9] pt-4 text-sm sm:text-base md:text-lg">
             From Concept to Creation — Beautiful design has the power to
             captivate audiences.
           </p>
@@ -121,13 +111,13 @@ const Hero = () => {
       </div>
 
       {/* Right images */}
-      <div className="flex flex-col gap-10 relative z-50">
+      <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-4 md:gap-10 relative z-50 justify-center">
         {imagesRight.map((src, i) => (
           <img
             key={i}
             onMouseEnter={() => setHoveredImg(src)}
             onMouseLeave={() => setHoveredImg(null)}
-            className="w-40 h-32 object-cover cursor-pointer"
+            className="w-28 h-20 sm:w-32 sm:h-24 md:w-32 md:h-32 object-cover cursor-pointer"
             src={src}
             alt={`Image ${i + 1}`}
           />
