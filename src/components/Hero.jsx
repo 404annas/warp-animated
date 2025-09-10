@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
+import React, { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import TrackImage from "./TrackImage"
 const words = ["Warp®", "Studio"];
 
 const Hero = () => {
@@ -15,18 +15,18 @@ const Hero = () => {
   }, []);
 
   const container = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
     exit: {
-      opacity: 0,
+      opacity: 1,
       transition: { staggerChildren: 0.1, staggerDirection: -1 },
     },
   };
 
   const char = {
-    hidden: { y: "100%", opacity: 0 },
-    visible: { y: "0%", opacity: 1, transition: { duration: 0.3 } },
-    exit: { y: "-100%", opacity: 0, transition: { duration: 0.3 } },
+    hidden: { y: "100%" },
+    visible: { y: "0%", transition: { duration: 0.25, staggerChildren: 0.1 } },
+    exit: { y: "-100%", transition: { duration: 0.25, staggerChildren: 0.1, staggerDirection: -1 } },
   };
 
   const imagesLeft = [
@@ -48,7 +48,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative bg-[#050505] min-h-screen text-white flex flex-col md:flex-row justify-center gap-8 md:gap-10 px-4 sm:px-6 md:px-4 pt-24 md:pt-52">
+    <section className=" mx-auto relative bg-[#050505] min-h-screen text-white flex flex-col md:flex-row justify-center gap-8 md:gap-10 px-4 sm:px-6 md:px-20 pt-24 md:pt-52">
       {/* Fullscreen hover image */}
       <AnimatePresence>
         {hoveredImg && (
@@ -68,15 +68,13 @@ const Hero = () => {
       </AnimatePresence>
 
       {/* Left images */}
-      <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-4 md:gap-10 relative z-50 justify-center">
+      <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-4 md:gap-14 relative z-50 justify-center">
         {imagesLeft.map((src, i) => (
-          <img
+          <TrackImage
             key={i}
-            onMouseEnter={() => setHoveredImg(src)}
-            onMouseLeave={() => setHoveredImg(null)}
-            className="w-28 h-20 sm:w-32 sm:h-24 md:w-32 md:h-32 object-cover cursor-pointer"
+            onHoverStart={() => setHoveredImg(src)}
+            onHoverEnd={() => setHoveredImg(null)}
             src={src}
-            alt={`Image ${i + 1}`}
           />
         ))}
       </div>
@@ -113,13 +111,12 @@ const Hero = () => {
       {/* Right images */}
       <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-4 md:gap-10 relative z-50 justify-center">
         {imagesRight.map((src, i) => (
-          <img
+          <TrackImage
             key={i}
-            onMouseEnter={() => setHoveredImg(src)}
-            onMouseLeave={() => setHoveredImg(null)}
-            className="w-28 h-20 sm:w-32 sm:h-24 md:w-32 md:h-32 object-cover cursor-pointer"
+            onHoverStart={() => setHoveredImg(src)}
+            onHoverEnd={() => setHoveredImg(null)}
             src={src}
-            alt={`Image ${i + 1}`}
+            positionRight={true}
           />
         ))}
       </div>
@@ -128,3 +125,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
