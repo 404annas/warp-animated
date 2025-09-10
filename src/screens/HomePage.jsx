@@ -25,7 +25,7 @@ const HomePage = () => {
 
       <AboutUs />
       <Works />
-      <WorksAnimation />
+      <WorksAnoAni />
 
       <Services />
       <Numbers />
