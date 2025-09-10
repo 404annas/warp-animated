@@ -1,71 +1,93 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
 import Marquee from "react-fast-marquee";
 
-const images = [
-    {
-        src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42362/687cef9ab58621cec61e46a6_1753016094200-p-1080.webp",
-        text: "Sports",
-        direction: "left",
-        color: "#3F205F",
-    },
-    {
-        src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42362/687cefb89916140832b515d6_1753015059832-p-1080.webp",
-        text: "Modern",
-        direction: "right",
-        color: "#D79D64",
-    },
-    {
-        src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cbe71216fcb9d157da3b9_Future.webp",
-        text: "Future",
-        direction: "left",
-        color: "#C8F1F2",
-    },
-];
+const WorksAnimation = ({ data }) => {
+    const sectionRef = useRef(null);
 
-const WorksAnimation = () => {
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1.2,
+                },
+            });
+
+            // Animate image scale and rotation
+            tl.fromTo(
+                ".image-wrapper",
+                {
+                    width: "30vw", // smaller initially
+                    height: "60vh",
+                    rotateX: 45,
+                    rotateZ: -15,
+                    borderRadius: "1rem",
+                },
+                {
+                    width: "100vw",
+                    height: "100vh",
+                    rotateX: 0,
+                    rotateZ: 0,
+                    borderRadius: "0px",
+                    ease: "power1.inOut",
+                }
+            ).to(".image-wrapper", {
+                width: "40vw",
+                height: "30vh",
+                rotateX: -45,
+                rotateZ: 15,
+                borderRadius: "1rem",
+                ease: "power1.inOut",
+            });
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <div className="bg-[#050505] overflow-hidden">
-            {images.map((item, i) => (
-                <section
-                    key={i}
-                    className="relative min-h-[80vh] sm:min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden px-2 py-20"
-                >
-                    {/* Image */}
-                    <img
-                        loading="lazy"
-                        className="w-full max-w-[95%] sm:max-w-[80%] lg:max-w-[65%] 
-                       h-[300px] sm:h-[500px] rounded-xl object-cover shadow-lg"
-                        src={item.src}
-                        alt={item.text}
-                    />
+        <section
+            ref={sectionRef}
+            className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+        >
+            {/* Image wrapper */}
+            <div
+                className="image-wrapper relative overflow-hidden rounded-2xl"
+                style={{ transformStyle: "preserve-3d", willChange: "transform" }}
+            >
+                <img
+                    loading="lazy"
+                    className="w-full h-full object-cover shadow-2xl shadow-black/50"
+                    src={data.src}
+                    alt={data.text}
+                />
+            </div>
 
-                    {/* Marquee centered over image */}
-                    <div className="absolute inset-0 flex items-center justify-center z-20 overflow-hidden">
-                        <Marquee
-                            direction={item.direction}
-                            speed={80}
-                            gradient={false}
-                            pauseOnHover={false}
-                            className="w-full overflow-hidden"
-                        >
-                            {Array.from({ length: 10 }).map((_, idx) => (
-                                <h1
-                                    key={idx}
-                                    style={{ color: item.color }}
-                                    className="
-                    text-3xl sm:text-5xl md:text-6xl lg:text-8xl
-                    font-bold uppercase tracking-wider mx-6 sm:mx-8
-                    leading-none text-center
-                  "
-                                >
-                                    {item.text}
-                                </h1>
-                            ))}
-                        </Marquee>
-                    </div>
-                </section>
-            ))}
-        </div>
+            {/* Marquee text */}
+            <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                <div className="w-full overflow-hidden">
+                    <Marquee
+                        direction={data.direction}
+                        speed={80}
+                        gradient={false}
+                        pauseOnHover={false}
+                        className="overflow-hidden"
+                    >
+                        {Array.from({ length: 10 }).map((_, idx) => (
+                            <h1
+                                key={idx}
+                                style={{ color: data.color }}
+                                className="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter mx-8 whitespace-nowrap leading-none h-fit"
+                            >
+                                {data.text}
+                            </h1>
+                        ))}
+                    </Marquee>
+                </div>
+            </div>
+        </section>
     );
 };
 

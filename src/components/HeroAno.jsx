@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import TrackImage from "./TrackImage"
 
 const words = ["Warp®", "Studio"];
 
@@ -101,17 +102,15 @@ const HeroAno = () => {
                 </p>
             </div>
 
-            <div className="flex flex-row items-center gap-32">
+            <div className="flex flex-row items-center gap-28">
                 {/* Left images */}
                 <div className="flex flex-col flex-wrap md:flex-nowrap gap-4 md:gap-10 relative z-40 justify-center">
                     {imagesLeft.map((src, i) => (
-                        <img
+                        <TrackImage
                             key={i}
-                            onMouseEnter={() => setHoveredImg(src)}
-                            onMouseLeave={() => setHoveredImg(null)}
-                            className="w-28 h-20 sm:w-32 sm:h-24 md:w-32 md:h-32 object-cover cursor-pointer"
+                            onHoverStart={() => setHoveredImg(src)}
+                            onHoverEnd={() => setHoveredImg(null)}
                             src={src}
-                            alt={`Image ${i + 1}`}
                         />
                     ))}
                 </div>
@@ -119,13 +118,12 @@ const HeroAno = () => {
                 {/* Right images */}
                 <div className="flex flex-col flex-wrap md:flex-nowrap gap-4 md:gap-10 relative z-40 justify-center">
                     {imagesRight.map((src, i) => (
-                        <img
+                        <TrackImage
                             key={i}
-                            onMouseEnter={() => setHoveredImg(src)}
-                            onMouseLeave={() => setHoveredImg(null)}
-                            className="w-28 h-20 sm:w-32 sm:h-24 md:w-32 md:h-32 object-cover cursor-pointer"
+                            onHoverStart={() => setHoveredImg(src)}
+                            onHoverEnd={() => setHoveredImg(null)}
                             src={src}
-                            alt={`Image ${i + 1}`}
+                            positionRight={true}
                         />
                     ))}
                 </div>

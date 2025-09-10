@@ -7,10 +7,14 @@ import Numbers from '../components/Numbers';
 import Grid from '../components/Grid';
 import Services from '../components/Services';
 import WorksAnimation from '../components/WorksAnimation';
+import WorksAnoAni from '../components/WorksAnoAni';
+import Cursor from '../components/Cursor';
 
 const HomePage = () => {
   return (
-    <div>
+    <main className="relative">
+      <Cursor />
+
       <div className="hidden md:block">
         <Hero />
       </div>
@@ -21,11 +25,11 @@ const HomePage = () => {
 
       <AboutUs />
       <Works />
-      <WorksAnimation />
+      <WorksAnoAni />
       {/* <Services /> */}
       <Numbers />
       <Grid />
-    </div>
+    </main>
   );
 };
 

@@ -45,7 +45,7 @@ const Works = () => {
                 delay: groupIndex * 0.2,
                 ease: "easeOut",
               }}
-              className="inline-block pb-10 sm:pb-20" // little spacing between letters
+              className="inline-block pt-10" // little spacing between letters
             >
               {letter}
             </motion.span>
