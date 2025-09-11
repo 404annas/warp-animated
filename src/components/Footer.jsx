@@ -9,18 +9,18 @@ const Footer = () => {
         <div className="flex flex-col gap-4 text-center md:text-left">
           <img
             loading="lazy"
-            className="w-8 mx-auto md:mx-0"
-            src="https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687ca147ad466abd53276c96_Vertigo.svg"
+            className="w-12 mx-auto md:mx-0"
+            src="https://vision-animated.vercel.app/assets/logo-Cup0Xx9b.png"
             alt="Logo"
           />
           <p className="max-w-xs text-[#5A5A5A] mx-auto md:mx-0">
-            Beautiful design has the power to captivate audiences.
+            The visionary behind the lens.
           </p>
+          <a href="tel:+92 333 8805362" className="text-[#5A5A5A]">Call <span className="text-[#F5F5F5]">+92 333 8805362</span></a>
         </div>
 
         {/* Links Section */}
-        <div className="flex flex-col sm:flex-row gap-10 sm:gap-20 text-center sm:text-left justify-center md:justify-end">
-          {/* Utilities */}
+        {/* <div className="flex flex-col sm:flex-row gap-10 sm:gap-20 text-center sm:text-left justify-center md:justify-end">
           <div className="flex flex-col gap-3">
             <h1 className="text-[#C9C9CB] uppercase font-medium">Utilities</h1>
             <p className="text-[#5A5A5A] hover:text-white cursor-pointer">
@@ -37,7 +37,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Follow Us */}
           <div className="flex flex-col gap-3">
             <h1 className="text-[#C9C9CB] uppercase font-medium">Follow Us</h1>
             <p className="text-[#5A5A5A] hover:text-white cursor-pointer">
@@ -50,7 +49,7 @@ const Footer = () => {
               Instagram
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Divider */}
@@ -58,8 +57,8 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="flex flex-col sm:flex-row items-center justify-between text-[#5A5A5A] pt-6 gap-4 sm:gap-0 text-sm">
-        <p className="text-center sm:text-left">© 2025 WARP. All Rights Reserved.</p>
-        <p className="text-center sm:text-right">Powered By Webflow</p>
+        <p className="text-center sm:text-left">© 2025 Shahrukh Kazim. All Rights Reserved.</p>
+        <p className="text-center sm:text-right">Powered By Techxudo</p>
       </div>
     </footer>
   );

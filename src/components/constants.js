@@ -1,19 +1,19 @@
 export const SECTIONS_DATA = [
     {
-        src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42362/687cef9ab58621cec61e46a6_1753016094200-p-1080.webp",
-        text: "Sport",
+        src: "https://shahrukh-kazim.netlify.app/assets/work4-CKH5VFuh.svg",
+        text: "Laal Kabotar",
         direction: "left",
         color: "#A2FF00",
     },
     {
-        src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42362/687cefb89916140832b515d6_1753015059832-p-1080.webp",
-        text: "Modern",
+        src: "https://fepo.co/wp-content/uploads/2022/02/maxresdefault-15.jpg",
+        text: "Pasoori",
         direction: "right",
         color: "#FFA500",
     },
     {
-        src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cbe71216fcb9d157da3b9_Future.webp",
-        text: "Future",
+        src: "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-9.jpg",
+        text: "Faltu Pyar",
         direction: "left",
         color: "#00C2FF",
     },

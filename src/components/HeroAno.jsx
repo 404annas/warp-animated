@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TrackImage from "./TrackImage"
 
-const words = ["Warp®", "Studio"];
+const words = ["Shahrukh", "Kazim"];
 
 const HeroAno = () => {
     const [index, setIndex] = useState(0);
@@ -31,21 +31,21 @@ const HeroAno = () => {
     };
 
     const imagesLeft = [
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cbe7ce1fe8d45c86e80aa_Orange_gradient.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cf1dba22945ac811c0c1a_1753015059832-2.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cbe71216fcb9d157da3b9_Future.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cbe038d6eb8bbcf7a5074_Concret.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cf4d796472d7e54a7a709_KrateWork2.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cf409ab424fc85061beec_1753014837852-2.webp",
+        "https://vision-animated.vercel.app/assets/hero2-DpRIJbuA.jpg",
+        "https://vision-animated.vercel.app/assets/hero8-Qqk7mg8-.jpg",
+        "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-5.jpg",
+        "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-4.jpg",
+        "https://fepo.co/wp-content/uploads/2024/06/maxresdefault-13.jpg",
+        "https://fepo.co/wp-content/uploads/2025/09/maxresdefault.jpg",
     ];
 
     const imagesRight = [
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cf607456506919fc45012_1753014920558-2.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cbe715508bb1c6f3ae025_Sport.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cbe024772311d32f3c4fe_Work1us.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cf4442784720960d2d83e_HeroCar-p-1600.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cbe03f6cc2d379a12c599_Hatguy.webp",
-        "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687cf7105b273fec7fd698b5_1753015140492.webp",
+        "https://vision-animated.vercel.app/assets/hero6-Btc3J3kZ.jpg",
+        "https://vision-animated.vercel.app/assets/hero1-BPIOk_hP.jpg",
+        "https://vision-animated.vercel.app/assets/hero3-X1uWCD5x.jpg",
+        "https://vision-animated.vercel.app/assets/hero5-DtcNxun_.jpg",
+        "https://vision-animated.vercel.app/assets/hero7-C9CCZGv-.png",
+        "https://vision-animated.vercel.app/assets/hero4-C1i8dCzk.jpg",
     ];
 
     return (
@@ -96,9 +96,8 @@ const HeroAno = () => {
                 </div>
 
                 {/* Subtitle */}
-                <p className="max-w-xs sm:max-w-sm text-center text-[#D9D9D9] pt-6 text-base sm:text-lg">
-                    From Concept to Creation — Beautiful design has the power to
-                    captivate audiences.
+                <p className="max-w-xs sm:max-w-sm text-center text-[#D9D9D9] pt-6 sm:pb-0 pb-4 text-base sm:text-lg">
+                    The top guy featured in several national and international projects
                 </p>
             </div>
 

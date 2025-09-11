@@ -9,11 +9,12 @@ import Services from '../components/Services';
 import WorksAnimation from '../components/WorksAnimation';
 import WorksAnoAni from '../components/WorksAnoAni';
 import Cursor from '../components/Cursor';
+import ServicesAno from '../components/ServicesAno';
 
 const HomePage = () => {
   return (
     <main className="relative">
-      <Cursor />
+      {/* <Cursor /> */}
 
       <div className="hidden md:block">
         <Hero />
@@ -27,6 +28,7 @@ const HomePage = () => {
       <Works />
       <WorksAnoAni />
 
+      <ServicesAno />
       <Services />
       <Numbers />
       <Grid />

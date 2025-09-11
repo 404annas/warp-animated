@@ -7,8 +7,8 @@ const Navbar = () => {
       <nav className="fixed top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer">
         <img
           loading="lazy"
-          className="w-6 sm:w-8 md:w-10"
-          src="https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/687ca147ad466abd53276c96_Vertigo.svg"
+          className="w-12 sm:w-14 md:w-18"
+          src="https://vision-animated.vercel.app/assets/logo-Cup0Xx9b.png"
           alt="Logo"
         />
       </nav>

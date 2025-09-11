@@ -5,18 +5,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const images = [
-  "https://images.unsplash.com/photo-1509310202330-aec5af561c6b?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1633933769681-dc8d28bdeb6d?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1563330232-57114bb0823c?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1627773167916-f52e5113f0d3?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1527952613700-fb1aec7f01c9?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1633933703119-5d25460ad829?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1618234037756-5d59fe495d99?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG11c2ljJTIwcHJvZHVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1663045771317-745e2668c779?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1627773167916-f52e5113f0d3?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1633933769681-dc8d28bdeb6d?w=900&auto=format&fit=crop&q=80",
+  "https://fepo.co/wp-content/uploads/2025/09/aalkaram-e1756808036977.png",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-12.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-11.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-10.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-9.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-8.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-7.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-6.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-5.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-4.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-3.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-2-1.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/asd.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault.jpg",
+  "https://fepo.co/wp-content/uploads/2025/09/MEMORIES-Hasan-Raheem-ft-Justin-Bibis-Official-Music-Video-_-Latest-Urdu-Punjabi-Song-2025-0-6-screenshot-1536x864.png",
+  "https://fepo.co/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-09-at-16.31.51-e1756768899448.jpeg",
+  "https://fepo.co/wp-content/uploads/2022/02/maxresdefault-14.jpg",
+  "https://fepo.co/wp-content/uploads/2022/02/maxresdefault-15.jpg",
+  "https://fepo.co/wp-content/uploads/2022/01/maxresdefault-16.jpg",
+  "https://fepo.co/wp-content/uploads/2022/01/maxresdefault-17.jpg",
+  "https://fepo.co/wp-content/uploads/2021/08/maxresdefault-18.jpg",
+
 ];
 
 const Grid = () => {

@@ -1,16 +1,17 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
+import brand2 from "../assets/brand2.png";
+import brand3 from "../assets/brand3.png";
+import brand4 from "../assets/brand4.png";
+import brand5 from "../assets/brand5.jpeg";
 
 const brands = [
-  { src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/68711b2b9332a934a2b4247a_TerraLight.svg", alt: "Brand 1" },
-  { src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/68711b2b9332a934a2b42475_PentaLight.svg", alt: "Brand 2" },
-  { src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/68711b2b9332a934a2b42479_InvertLight.svg", alt: "Brand 3" },
-  { src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/68711b2b9332a934a2b42477_DuneLight.svg", alt: "Brand 4" },
-  { src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/68711b2b9332a934a2b42473_ProLineLight.svg", alt: "Brand 5" },
-  { src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/68711b2b9332a934a2b42478_HitechLight.svg", alt: "Brand 6" },
-  { src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/68711b2b9332a934a2b42476_PinpointLight.svg", alt: "Brand 7" },
-  { src: "https://cdn.prod.website-files.com/68711b2b9332a934a2b42342/68711b2b9332a934a2b42474_Iceberglight.svg", alt: "Brand 8" },
+  { src: "https://static.vecteezy.com/system/resources/previews/019/956/122/non_2x/coca-cola-transparent-coca-cola-free-free-png.png", alt: "Brand 1" },
+  { src: brand2, alt: "Brand 2" },
+  { src: brand5, alt: "Brand 5" },
+  { src: brand3, alt: "Brand 3" },
+  { src: brand4, alt: "Brand 4" },
 ];
 
 const AboutUs = () => {
@@ -48,9 +49,9 @@ const AboutUs = () => {
           variants={item}
           className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-thin"
         >
-          We Don’t Just Design for the Present —{" "}
+          Widely known as FEPO —{" "}
           <span className="text-[#999999]">
-            We Craft Experiences for the Future.
+            is a celebrated Pakistani video producer.
           </span>
         </motion.h1>
 
@@ -59,10 +60,9 @@ const AboutUs = () => {
           variants={item}
           className="text-[#717171] py-8 sm:py-10 md:py-14 mx-auto md:mx-0 max-w-xl sm:max-w-2xl md:max-w-3xl text-sm sm:text-base md:text-lg"
         >
-          Specializing in creating visually captivating designs that leave a
-          lasting impression by transforming your ideas into stunning visuals.
-          Crafting unique and immersive brand narratives that captivate
-          audiences across digital platforms.
+          <p className="pb-4">Shahrukh Kazim Ali is known for <a className="text-[#aaaaaa]" href="https://www.imdb.com/title/tt2400629/?ref_=nm_ov_bio_lk">Coke Studio Pakistan (2008)</a>, <a className="text-[#aaaaaa]" href="https://www.imdb.com/title/tt9373234/?ref_=nm_ov_bio_lk">Laal Kabootar (2019)</a> and <a className="text-[#aaaaaa]" href="https://www.imdb.com/title/tt37937230/?ref_=nm_ov_bio_lk">Faltu Pyar (2022)</a>.</p>
+          My work as a video producer and director includes projects with artists such as Hasan Raheem, Natasha Noorani, Talha Anjum, Talha Yunus, Quick Style,Nayel, Faris Shafi and HYDR among others. voices shaping the cutting edge of South Asian music.
+          <p className="pt-4">My Productions for Pepsi’s ‘Why Not Meri Jaan’ and ‘Sohna Tu’ redefined the brand’s identity for Gen Z, merging music, fashion, and rebellion into high-impact digital storytelling.</p>
         </motion.p>
       </motion.div>
 
@@ -72,11 +72,11 @@ const AboutUs = () => {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="flex items-center justify-center mx-3 sm:mx-4 border border-[#121212] rounded-xl w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48"
+              className="flex items-center justify-center mx-3 sm:mx-4 border border-[#121212] rounded-xl w-28 h-28 sm:w-36 sm:h-36 md:w-60 md:h-60"
             >
               <img
                 loading="lazy"
-                className="max-w-[60%] max-h-[70%] object-contain"
+                className="max-w-[70%] max-h-[70%] object-contain"
                 src={brand.src}
                 alt={brand.alt}
               />
