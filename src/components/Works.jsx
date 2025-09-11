@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const Works = () => {
   const word = "WORKS";
@@ -12,16 +12,19 @@ const Works = () => {
     [0, 4],   // W, S
   ];
 
+  // Single ref for whole heading
+  const ref = useRef(null);
+  const inView = useInView(ref, { amount: 0.5, once: true }); // 👈 run once only
+
   return (
     <section className="bg-[#050505] flex flex-col justify-center items-center px-4">
       <h1
+        ref={ref}
         className="
-          text-[40px]    /* small mobile */
-          sm:text-[60px] /* larger mobile */
-          md:text-[90px] /* tablets */
-          lg:text-[120px] /* laptops */
-          xl:text-[150px] /* desktops */
-          2xl:text-[180px] /* very large screens */
+          text-[40px]
+          sm:text-[60px]
+          md:text-[90px]
+          lg:text-[120px]
           font-bold text-[#F5F5F5] flex flex-wrap justify-center text-center leading-none
         "
       >
@@ -38,14 +41,13 @@ const Works = () => {
               key={i}
               variants={variant}
               initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.5 }}
+              animate={inView ? "visible" : "hidden"} // 👈 trigger only first time
               transition={{
                 duration: 0.8,
                 delay: groupIndex * 0.2,
                 ease: "easeOut",
               }}
-              className="inline-block pt-10" // little spacing between letters
+              className="inline-block pt-10 pb-10 sm:pb-0"
             >
               {letter}
             </motion.span>

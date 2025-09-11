@@ -35,7 +35,7 @@ const AboutUs = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 md:py-40 bg-[#050505]">
+    <section className="py-20 sm:py-28 md:py-20 bg-[#050505]">
       {/* Text Section */}
       <motion.div
         className="px-6 sm:px-10 md:px-20 text-center md:text-left"

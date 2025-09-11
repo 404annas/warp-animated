@@ -10,6 +10,9 @@ import WorksAnimation from '../components/WorksAnimation';
 import WorksAnoAni from '../components/WorksAnoAni';
 import Cursor from '../components/Cursor';
 import ServicesAno from '../components/ServicesAno';
+import AboutAno from '../components/AboutAno';
+import ContactAno from '../components/ContactAno';
+import Contact from '../components/Contact';
 
 const HomePage = () => {
   return (
@@ -24,14 +27,16 @@ const HomePage = () => {
         <HeroAno />
       </div>
 
+      <AboutAno />
       <AboutUs />
       <Works />
       <WorksAnoAni />
-
       <ServicesAno />
       <Services />
       <Numbers />
       <Grid />
+      <ContactAno />
+      <Contact />
     </main>
   );
 };
