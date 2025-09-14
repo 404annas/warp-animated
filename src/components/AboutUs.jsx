@@ -38,10 +38,10 @@ const AboutUs = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 md:py-20 bg-[#050505]">
+    <section className=" py-20 sm:py-28 md:py-20 bg-[#050505]">
       {/* Text Section */}
       <motion.div
-        className="px-6 sm:px-10 md:px-20 flex md:flex-row flex-col  items-center justify-center  text-center md:text-left"
+        className=" sm:px-10  flex md:flex-row flex-col  items-center justify-center  text-center md:text-left"
         variants={container}
         initial="hidden"
         whileInView="visible"
@@ -50,7 +50,7 @@ const AboutUs = () => {
         {/* Heading */}
         <motion.h1
           variants={item}
-          className="text-white text-3xl  sm:text-4xl md:text-5xl lg:text-7xl leading-none font-thin"
+          className="text-white text-3xl  sm:text-4xl md:text-5xl lg:text-6xl  leading-none font-thin"
         >
           Widely known as FEPO —{" "}
           <span className="text-[#999999]">
