@@ -7,9 +7,9 @@ const Works = () => {
 
   // Define animation groups: center-out
   const groups = [
-    [2],      // R
-    [1, 3],   // O, K
-    [0, 4],   // W, S
+    [2], // R
+    [1, 3], // O, K
+    [0, 4], // W, S
   ];
 
   // Single ref for whole heading

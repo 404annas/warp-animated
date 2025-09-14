@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Logo */}
-      <nav className="fixed top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer">
+      <nav className="absolute top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer">
         <img
           loading="lazy"
           className="w-12 sm:w-14 md:w-18"
