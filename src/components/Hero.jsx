@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import TrackImage from "./TrackImage"
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import TrackImage from "./TrackImage";
 const words = ["Shahrukh", "Kazim"];
 
 const Hero = () => {
@@ -26,25 +31,73 @@ const Hero = () => {
   const char = {
     hidden: { y: "100%" },
     visible: { y: "0%", transition: { duration: 0.25, staggerChildren: 0.1 } },
-    exit: { y: "-100%", transition: { duration: 0.25, staggerChildren: 0.1, staggerDirection: -1 } },
+    exit: {
+      y: "-100%",
+      transition: {
+        duration: 0.25,
+        staggerChildren: 0.1,
+        staggerDirection: -1,
+      },
+    },
   };
 
   const imagesLeft = [
-    "https://vision-animated.vercel.app/assets/hero2-DpRIJbuA.jpg",
-    "https://vision-animated.vercel.app/assets/hero8-Qqk7mg8-.jpg",
-    "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-5.jpg",
-    "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-4.jpg",
-    "https://fepo.co/wp-content/uploads/2024/06/maxresdefault-13.jpg",
-    "https://fepo.co/wp-content/uploads/2025/09/maxresdefault.jpg",
+    {
+      src: "https://vision-animated.vercel.app/assets/hero2-DpRIJbuA.jpg",
+      links:
+        "https://www.youtube.com/watch?v=O3pUsXxCfEk&list=RDO3pUsXxCfEk&start_radio=1",
+    },
+    {
+      src: "https://vision-animated.vercel.app/assets/hero8-Qqk7mg8-.jpg",
+      links: "https://www.youtube.com/watch?v=wB0CqUJa3Z8",
+    },
+    {
+      src: "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-5.jpg",
+      links:
+        "https://www.youtube.com/watch?v=dB0AFSUl2Vk&list=RDdB0AFSUl2Vk&start_radio=1",
+    },
+    {
+      src: "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-4.jpg",
+      links:
+        "https://www.youtube.com/watch?v=9dcwnIgBrCk&list=RD9dcwnIgBrCk&start_radio=1",
+    },
+    {
+      src: "https://fepo.co/wp-content/uploads/2024/06/maxresdefault-13.jpg",
+      links:
+        "https://www.youtube.com/watch?v=-urTPhh7gNk&list=RD-urTPhh7gNk&start_radio=1",
+    },
+    {
+      src: "https://fepo.co/wp-content/uploads/2025/09/maxresdefault.jpg",
+      links:
+        "https://www.youtube.com/watch?v=ztLDdpHK2hM&list=RDztLDdpHK2hM&start_radio=1",
+    },
   ];
-  
+
   const imagesRight = [
-    "https://vision-animated.vercel.app/assets/hero6-Btc3J3kZ.jpg",
-    "https://vision-animated.vercel.app/assets/hero1-BPIOk_hP.jpg",
-    "https://vision-animated.vercel.app/assets/hero3-X1uWCD5x.jpg",
-    "https://vision-animated.vercel.app/assets/hero5-DtcNxun_.jpg",
-    "https://vision-animated.vercel.app/assets/hero7-C9CCZGv-.png",
-    "https://vision-animated.vercel.app/assets/hero4-C1i8dCzk.jpg",
+    {
+      src: "https://vision-animated.vercel.app/assets/hero6-Btc3J3kZ.jpg",
+      link: "https://www.youtube.com/watch?v=GX0j3FFp8mI&list=RDGX0j3FFp8mI&start_radio=1",
+    },
+    {
+      src: "https://vision-animated.vercel.app/assets/hero1-BPIOk_hP.jpg",
+      link: "https://www.youtube.com/watch?v=7D4vNcK6D38&list=RD7D4vNcK6D38&start_radio=1",
+    },
+    {
+      src: "https://vision-animated.vercel.app/assets/hero3-X1uWCD5x.jpg",
+      link: "https://www.youtube.com/watch?v=bdxMc06WvqI&list=RDbdxMc06WvqI&start_radio=1",
+    },
+    {
+      src: "https://vision-animated.vercel.app/assets/hero5-DtcNxun_.jpg",
+      link: "https://www.youtube.com/watch?v=9mNaNMmxJ1I&list=RD9mNaNMmxJ1I&start_radio=1",
+    },
+    {
+      src: "https://vision-animated.vercel.app/assets/hero7-C9CCZGv-.png",
+      link: "https://www.youtube.com/watch?v=5eHoTy0mvzU&list=RD9mNaNMmxJ1I&index=3",
+    },
+    {
+      src: "https://vision-animated.vercel.app/assets/hero4-C1i8dCzk.jpg",
+      link: "https://www.youtube.com/watch?v=BnNG7sayL2w&list=RD9mNaNMmxJ1I&index=7",
+    },
   ];
 
   return (
@@ -69,12 +122,13 @@ const Hero = () => {
 
       {/* Left images */}
       <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-4 md:gap-14 relative z-50 justify-center">
-        {imagesLeft.map((src, i) => (
+        {imagesLeft.map((img, i) => (
           <TrackImage
             key={i}
             onHoverStart={() => setHoveredImg(src)}
             onHoverEnd={() => setHoveredImg(null)}
-            src={src}
+            src={img.src}
+            link={img.links}
           />
         ))}
       </div>
@@ -109,12 +163,13 @@ const Hero = () => {
 
       {/* Right images */}
       <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-4 md:gap-14 relative z-50 justify-center">
-        {imagesRight.map((src, i) => (
+        {imagesRight.map((img, i) => (
           <TrackImage
             key={i}
             onHoverStart={() => setHoveredImg(src)}
             onHoverEnd={() => setHoveredImg(null)}
-            src={src}
+            src={img.src}
+            link={img.link}
             positionRight={true}
           />
         ))}
@@ -124,5 +179,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-
