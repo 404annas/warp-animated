@@ -7,16 +7,16 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-0">
         {/* Logo + Tagline */}
         <div className="flex flex-col gap-4 text-center md:text-left">
-          <img
+          {/* <img
             loading="lazy"
             className="w-12 mx-auto md:mx-0"
             src="https://vision-animated.vercel.app/assets/logo-Cup0Xx9b.png"
             alt="Logo"
-          />
+          /> */}
+          <h1 className="text-6xl font-bold">Shahrukh Kazim</h1>
           <p className="max-w-xs text-[#5A5A5A] mx-auto md:mx-0">
             The visionary behind the lens.
           </p>
-          <a href="tel:+92 333 8805362" className="text-[#5A5A5A]">Call <span className="text-[#F5F5F5]">+92 333 8805362</span></a>
         </div>
 
         {/* Links Section */}
@@ -57,7 +57,9 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="flex flex-col sm:flex-row items-center justify-between text-[#5A5A5A] pt-6 gap-4 sm:gap-0 text-sm">
-        <p className="text-center sm:text-left">© 2025 Shahrukh Kazim. All Rights Reserved.</p>
+        <p className="text-center sm:text-left">
+          © 2025 Shahrukh Kazim. All Rights Reserved.
+        </p>
         <p className="text-center sm:text-right">Powered By Techxudo</p>
       </div>
     </footer>

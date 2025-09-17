@@ -16,25 +16,27 @@ const WorksAnimation = ({ data }) => {
         },
       });
 
-      // Animate image scale and rotation
-      tl.fromTo(
-        ".image-wrapper",
-        {
-          width: "30vw", // smaller initially
-          height: "60vh",
-          rotateX: 45,
-          rotateZ: -15,
-          borderRadius: "1rem",
-        },
-        {
-          width: "100vw",
-          height: "100vh",
-          rotateX: 0,
-          rotateZ: 0,
-          borderRadius: "0px",
-          ease: "power1.inOut",
-        }
-      ).to(".image-wrapper", {
+      // Initial state: small, rotated box
+      gsap.set(".image-wrapper", {
+        width: "30vw",
+        height: "60vh",
+        rotateX: 45,
+        rotateZ: -15,
+        borderRadius: "1rem",
+      });
+
+      // Animate to full screen
+      tl.to(".image-wrapper", {
+        width: "100vw",
+        height: "100vh",
+        rotateX: 0,
+        rotateZ: 0,
+        borderRadius: "0px",
+        ease: "power1.inOut",
+      });
+
+      // Animate back to a different small, rotated box
+      tl.to(".image-wrapper", {
         width: "40vw",
         height: "30vh",
         rotateX: -45,
@@ -49,6 +51,7 @@ const WorksAnimation = ({ data }) => {
 
   return (
     <section
+      id="portfolio"
       ref={sectionRef}
       className="relative h-screen w-full flex items-center justify-center overflow-hidden"
     >

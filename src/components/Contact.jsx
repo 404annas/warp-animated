@@ -75,12 +75,6 @@ const Contact = () => {
               </h3>
               <p className="text-lg">hello@gmail.com</p>
             </div>
-            <div>
-              <h3 className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">
-                Phone
-              </h3>
-              <p className="text-lg">+92 333 8805362</p>
-            </div>
           </div>
         </div>
 

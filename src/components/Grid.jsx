@@ -1,14 +1,20 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import img3 from "../assets/images/hero-1.webp";
+import img4 from "../assets/images/hero-2.webp";
+import img5 from "../assets/images/hero-3.webp";
+import img1 from "../assets/images/hero-4.webp";
+import img2 from "../assets/images/hero-5.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const images = [
   "https://fepo.co/wp-content/uploads/2025/09/aalkaram-e1756808036977.png",
-  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-12.jpg",
-  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-11.jpg",
-  "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-10.jpg",
+  img4,
+  img5,
+  img3,
+
   "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-9.jpg",
   "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-8.jpg",
   "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-7.jpg",
@@ -26,7 +32,6 @@ const images = [
   "https://fepo.co/wp-content/uploads/2022/01/maxresdefault-16.jpg",
   "https://fepo.co/wp-content/uploads/2022/01/maxresdefault-17.jpg",
   "https://fepo.co/wp-content/uploads/2021/08/maxresdefault-18.jpg",
-
 ];
 
 const Grid = () => {

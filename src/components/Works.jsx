@@ -17,7 +17,10 @@ const Works = () => {
   const inView = useInView(ref, { amount: 0.5, once: true }); // 👈 run once only
 
   return (
-    <section className="bg-[#050505] flex flex-col justify-center items-center px-4">
+    <section
+      id="portfolio"
+      className="bg-[#050505] flex flex-col justify-center items-center px-4"
+    >
       <h1
         ref={ref}
         className="

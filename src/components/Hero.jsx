@@ -5,6 +5,19 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import hero1 from "../assets/images/hero-1.webp";
+import hero2 from "../assets/images/hero-2.webp";
+import hero3 from "../assets/images/hero-3.webp";
+import hero4 from "../assets/images/hero-4.webp";
+import hero5 from "../assets/images/hero-5.webp";
+import hero6 from "../assets/images/hero-6.webp";
+import hero7 from "../assets/images/hero-7.webp";
+import hero8 from "../assets/images/hero-8.webp";
+import hero9 from "../assets/images/hero-9.webp";
+import hero10 from "../assets/images/hero-10.webp";
+import hero11 from "../assets/images/hero-11.webp";
+import hero12 from "../assets/images/hero-12.webp";
+
 import TrackImage from "./TrackImage";
 const words = ["Shahrukh", "Kazim"];
 
@@ -41,33 +54,35 @@ const Hero = () => {
     },
   };
 
+  // ...existing imports and code...
+
   const imagesLeft = [
     {
-      src: "https://vision-animated.vercel.app/assets/hero2-DpRIJbuA.jpg",
+      src: hero1,
       links:
         "https://www.youtube.com/watch?v=O3pUsXxCfEk&list=RDO3pUsXxCfEk&start_radio=1",
     },
     {
-      src: "https://vision-animated.vercel.app/assets/hero8-Qqk7mg8-.jpg",
+      src: hero2,
       links: "https://www.youtube.com/watch?v=wB0CqUJa3Z8",
     },
     {
-      src: "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-5.jpg",
+      src: hero3,
       links:
         "https://www.youtube.com/watch?v=dB0AFSUl2Vk&list=RDdB0AFSUl2Vk&start_radio=1",
     },
     {
-      src: "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-4.jpg",
+      src: hero4,
       links:
         "https://www.youtube.com/watch?v=9dcwnIgBrCk&list=RD9dcwnIgBrCk&start_radio=1",
     },
     {
-      src: "https://fepo.co/wp-content/uploads/2024/06/maxresdefault-13.jpg",
+      src: hero5,
       links:
         "https://www.youtube.com/watch?v=-urTPhh7gNk&list=RD-urTPhh7gNk&start_radio=1",
     },
     {
-      src: "https://fepo.co/wp-content/uploads/2025/09/maxresdefault.jpg",
+      src: hero6,
       links:
         "https://www.youtube.com/watch?v=ztLDdpHK2hM&list=RDztLDdpHK2hM&start_radio=1",
     },
@@ -75,30 +90,32 @@ const Hero = () => {
 
   const imagesRight = [
     {
-      src: "https://vision-animated.vercel.app/assets/hero6-Btc3J3kZ.jpg",
+      src: hero7,
       link: "https://www.youtube.com/watch?v=GX0j3FFp8mI&list=RDGX0j3FFp8mI&start_radio=1",
     },
     {
-      src: "https://vision-animated.vercel.app/assets/hero1-BPIOk_hP.jpg",
+      src: hero8,
       link: "https://www.youtube.com/watch?v=7D4vNcK6D38&list=RD7D4vNcK6D38&start_radio=1",
     },
     {
-      src: "https://vision-animated.vercel.app/assets/hero3-X1uWCD5x.jpg",
+      src: hero9,
       link: "https://www.youtube.com/watch?v=bdxMc06WvqI&list=RDbdxMc06WvqI&start_radio=1",
     },
     {
-      src: "https://vision-animated.vercel.app/assets/hero5-DtcNxun_.jpg",
+      src: hero10,
       link: "https://www.youtube.com/watch?v=9mNaNMmxJ1I&list=RD9mNaNMmxJ1I&start_radio=1",
     },
     {
-      src: "https://vision-animated.vercel.app/assets/hero7-C9CCZGv-.png",
+      src: hero11,
       link: "https://www.youtube.com/watch?v=5eHoTy0mvzU&list=RD9mNaNMmxJ1I&index=3",
     },
     {
-      src: "https://vision-animated.vercel.app/assets/hero4-C1i8dCzk.jpg",
+      src: hero12,
       link: "https://www.youtube.com/watch?v=BnNG7sayL2w&list=RD9mNaNMmxJ1I&index=7",
     },
   ];
+
+  // ...rest of the existing code...
 
   return (
     <section className=" mx-auto relative bg-[#050505] min-h-screen text-white flex flex-col md:flex-row justify-center gap-8 md:gap-10 px-4 sm:px-6 md:px-20 pt-24 md:pt-52">

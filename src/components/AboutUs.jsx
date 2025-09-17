@@ -1,20 +1,26 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
-import brand2 from "../assets/brand2.png";
-import brand3 from "../assets/brand3.png";
-import brand4 from "../assets/brand4.png";
-import brand5 from "../assets/brand5.jpeg";
+import brand1 from "../assets/images/brand1.webp";
+import brand2 from "../assets/brand2.webp";
+import brand3 from "../assets/brand3.webp";
+import brand4 from "../assets/brand4.webp";
+import brand5 from "../assets/brand5.webp";
 
 const brands = [
   {
-    src: "https://static.vecteezy.com/system/resources/previews/019/956/122/non_2x/coca-cola-transparent-coca-cola-free-free-png.png",
+    src: brand1,
     alt: "Brand 1",
   },
   { src: brand2, alt: "Brand 2" },
   { src: brand5, alt: "Brand 5" },
   { src: brand3, alt: "Brand 3" },
   { src: brand4, alt: "Brand 4" },
+  {
+    src: brand1,
+    alt: "Brand 1",
+  },
+  { src: brand5, alt: "Brand 5" },
 ];
 
 const AboutUs = () => {
@@ -38,7 +44,7 @@ const AboutUs = () => {
   };
 
   return (
-    <section className=" py-20 sm:py-28 md:py-20 bg-[#050505]">
+    <section id="about" className=" py-20 sm:py-28 md:py-20 bg-[#050505]">
       {/* Text Section */}
       <motion.div
         className=" sm:px-10  flex md:flex-row flex-col  items-center justify-center  text-center md:text-left"

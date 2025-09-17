@@ -29,14 +29,13 @@ const HomePage = () => {
 
       <AboutAno />
       <AboutUs />
-      <Works />
-      <WorksAnoAni />
       <ServicesAno />
       <Services />
+      <Works />
+      <WorksAnoAni />
       <Numbers />
       <Grid />
       {/* <ContactAno /> */}
-      <Contact />
     </main>
   );
 };
