@@ -1,7 +1,9 @@
+import img1 from "../assets/imges.webp";
+
 export const SECTIONS_DATA = [
   {
-    src: "https://dailytimes.com.pk/assets/uploads/2019/03/14/lead-1-copy.jpg",
-    text: "Laal Kabotar",
+    src: img1,
+    text: "Why not meri Jaan",
     direction: "left",
     color: "#A2FF00",
   },
