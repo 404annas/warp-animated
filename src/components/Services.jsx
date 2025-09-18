@@ -48,7 +48,7 @@ const services = [
   },
 ];
 
-const CUBE_SIZE = 340; // Define cube size in pixels
+const CUBE_SIZE = 295; // Define cube size in pixels
 
 const Services = () => {
   const sectionRef = useRef(null);
@@ -71,7 +71,7 @@ const Services = () => {
   const rotateX = useTransform(
     scrollYProgress,
     [0, 0.25, 0.5, 0.75, 1],
-    [0, 0, -90, -90, 0]
+    [0, 0, -90, -90, 1]
   );
 
   // 3. Track the active index based on scroll progress to sync text
