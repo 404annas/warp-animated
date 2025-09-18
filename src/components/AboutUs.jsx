@@ -67,7 +67,7 @@ const AboutUs = () => {
         {/* Paragraph */}
         <motion.p
           variants={item}
-          className="text-[#717171] py-8  sm:py-10 md:py-14 mx-auto md:mx-0 max-w-xl sm:max-w-2xl md:max-w-3xl text-sm sm:text-base md:text-lg"
+          className="text-[#717171] py-8 px-4 sm:py-10 md:py-14 mx-auto md:mx-0 max-w-lg sm:max-w-2xl md:max-w-3xl text-sm sm:text-base md:text-lg"
         >
           <p className="pb-4">
             Shahrukh Kazim Ali is known for{" "}
