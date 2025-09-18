@@ -61,7 +61,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+    <div className="bg-black pt-30 text-white min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8">
         {/* Left Section: Contact Info */}
         <div className="flex flex-col justify-between">
