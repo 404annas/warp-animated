@@ -51,7 +51,7 @@ const Numbers = () => {
         {/* Right Section */}
         <div className="flex flex-col lg:pr-20">
           <a
-            href="https://example1.com"
+            href="https://www.flaunt.com/post/shahrukh-kazim-ali"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -62,7 +62,7 @@ const Numbers = () => {
             />
           </a>
           <a
-            href="https://example2.com"
+            href="https://www.nation.com.pk/19-May-2025/gilgit-to-global-the-unstoppable-rise-of-shahrukh-kazim-ali"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -73,7 +73,7 @@ const Numbers = () => {
             />
           </a>
           <a
-            href="https://example3.com"
+            href="https://www.khaleejtimes.com/kt-network/pakistani-producer-shahrukh-kazims-pasoori-surpasses-one-billion-views-globally"
             target="_blank"
             rel="noopener noreferrer"
           >
