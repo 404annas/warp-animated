@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TrackImage from "./TrackImage"
+import hero1 from "../assets/hero1.jpg"
+import hero2 from "../assets/hero2.webp";
+import hero3 from "../assets/hero3.webp";
+import hero4 from "../assets/hero4.webp";
+import hero5 from "../assets/hero5.webp";
+import hero6 from "../assets/hero6.webp";
+import hero7 from "../assets/hero7.webp";
+import hero8 from "../assets/hero8.webp";
+import hero9 from "../assets/hero9.webp";
+import hero10 from "../assets/hero10.webp";
+import hero11 from "../assets/hero11.webp";
+import hero12 from "../assets/hero12.webp";
 
 const words = ["Shahrukh", "Kazim"];
 
@@ -31,21 +43,21 @@ const HeroAno = () => {
     };
 
     const imagesLeft = [
-        "https://vision-animated.vercel.app/assets/hero2-DpRIJbuA.jpg",
-        "https://vision-animated.vercel.app/assets/hero8-Qqk7mg8-.jpg",
-        "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-5.jpg",
-        "https://fepo.co/wp-content/uploads/2025/09/maxresdefault-4.jpg",
-        "https://fepo.co/wp-content/uploads/2024/06/maxresdefault-13.jpg",
-        "https://fepo.co/wp-content/uploads/2025/09/maxresdefault.jpg",
+        hero1,
+        hero2,
+        hero3,
+        hero4,
+        hero5,
+        hero6,
     ];
 
     const imagesRight = [
-        "https://vision-animated.vercel.app/assets/hero6-Btc3J3kZ.jpg",
-        "https://vision-animated.vercel.app/assets/hero1-BPIOk_hP.jpg",
-        "https://vision-animated.vercel.app/assets/hero3-X1uWCD5x.jpg",
-        "https://vision-animated.vercel.app/assets/hero5-DtcNxun_.jpg",
-        "https://vision-animated.vercel.app/assets/hero7-C9CCZGv-.png",
-        "https://vision-animated.vercel.app/assets/hero4-C1i8dCzk.jpg",
+        hero7,
+        hero8,
+        hero9,
+        hero10,
+        hero11,
+        hero12,
     ];
 
     return (
