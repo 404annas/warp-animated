@@ -1,106 +1,243 @@
-import React from 'react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+// OptionButton component remains the same
+const OptionButton = ({ label, isSelected, onClick }) => (
+  <button
+    type="button"
+    onClick={onClick}
+    className={`px-6 py-2 border border-gray-600 rounded-full text-sm transition-colors duration-300
+            ${
+              isSelected
+                ? "bg-white text-black"
+                : // Added focus-visible for better accessibility
+                  "bg-transparent text-gray-300 hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            }`}
+  >
+    {label}
+  </button>
+);
 
 const Contact = () => {
+  // State for the form inputs
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // State for the selectable options
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedBudget, setSelectedBudget] = useState("");
+  // NEW: State for the custom budget input
+  const [customBudget, setCustomBudget] = useState("");
+
+  const services = ["Videography", "Photography", "Editing", "Other"];
+  const budgets = ["<$5K", "$5K-$10K", "$10K+", "Custom"];
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleBudgetClick = (budget) => {
+    setSelectedBudget(budget);
+    // If user selects a non-custom option, clear the custom input
+    if (budget !== "Custom") {
+      setCustomBudget("");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Combine all data, using the custom budget value if 'Custom' is selected
+    const submission = {
+      ...formData,
+      service: selectedService,
+      budget: selectedBudget === "Custom" ? customBudget : selectedBudget,
+    };
+    console.log("Form Submitted:", submission);
+    // Here you would typically send the data to a server or API
+  };
+
   return (
-    <div className="min-h-screen bg-[#050505] flex items-center justify-center py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl w-full flex flex-col md:flex-row bg-white rounded-xl overflow-hidden">
-        {/* Left Section */}
-        <div className="md:w-1/2 p-6 sm:p-12 lg:p-16 flex flex-col justify-center items-start sm:items-center sm:text-center md:items-start md:text-left bg-white">
-          <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-8 sm:mb-10">
-            NEED COOL WORK DONE? LEAVE US A MESSAGE!
-          </p>
-          <div className="text-base sm:text-lg text-[#5A554A] mb-8 sm:mb-10">
-            <p>Office No. 305, 3rd Floor, Plot No. 21-C,</p>
-            <p>Stadium Commercial, Lane No. 2,</p>
-            <p>Phase V, D.H.A. Karachi.</p>
+    <div className="bg-black pt-40 text-white min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8">
+        {/* Left Section: Contact Info */}
+        <div className="flex flex-col justify-between">
+          <h1 className="text-7xl sm:text-8xl font-thin leading-none">
+            Contact us
+          </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 lg:mt-0">
+            <div>
+              <h3 className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">
+                Email Address
+              </h3>
+              <p className="text-lg">hello@gmail.com</p>
+            </div>
           </div>
-          <a href='tel:+92 333 8805362' className="text-base sm:text-xl font-bold text-gray-900 mb-8 sm:mb-10">
-            CALL +92 333 8805362
-          </a>
         </div>
 
-        {/* Right Section - Form */}
-        <div className="md:w-1/2 p-8 sm:p-12 lg:p-16 bg-white">
-          <form className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Your name
-              </label>
-              <div className="mt-1">
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  required
-                  placeholder='John Doe'
-                  className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-xs placeholder-gray-500 outline-none sm:text-sm"
+        {/* Right Section: Contact Form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+          {/* Service Selection */}
+          <div>
+            <h3 className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Service
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {services.map((service) => (
+                <OptionButton
+                  key={service}
+                  label={service}
+                  isSelected={selectedService === service}
+                  onClick={() => setSelectedService(service)}
                 />
-              </div>
+              ))}
             </div>
+          </div>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Your email
-              </label>
-              <div className="mt-1">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  placeholder='johndoe@gmail.com'
-                  className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-xs placeholder-gray-500 sm:text-sm outline-none"
+          {/* Budget Selection */}
+          <div>
+            <h3 className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Budget
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {budgets.map((budget) => (
+                <OptionButton
+                  key={budget}
+                  label={budget}
+                  isSelected={selectedBudget === budget}
+                  onClick={() => handleBudgetClick(budget)}
                 />
-              </div>
+              ))}
             </div>
 
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                Subject
-              </label>
-              <div className="mt-1">
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  required
-                  placeholder='Video Production'
-                  className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-xs placeholder-gray-500 sm:text-sm outline-none"
-                />
-              </div>
-            </div>
+            {/* NEW: Conditionally rendered custom budget input */}
+            <AnimatePresence>
+              {selectedBudget === "Custom" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                  animate={{ opacity: 1, height: "auto", marginTop: "1.5rem" }}
+                  exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <label
+                    className="text-xs uppercase tracking-[0.3em] text-gray-400"
+                    htmlFor="customBudget"
+                  >
+                    Please Specify
+                  </label>
+                  <input
+                    type="text"
+                    id="customBudget"
+                    name="customBudget"
+                    value={customBudget}
+                    onChange={(e) => setCustomBudget(e.target.value)}
+                    placeholder="Enter your budget"
+                    className="w-full bg-transparent border-b border-gray-600 py-3 mt-1 outline-none focus:border-white transition-colors"
+                    required
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
+          {/* Name and Email Inputs */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                Your message
-              </label>
-              <div className="mt-1">
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="7"
-                  required
-                  placeholder='I have a project in my mind.'
-                  className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-xs placeholder-gray-500 sm:text-sm resize-none outline-none"
-                ></textarea>
-              </div>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:scale-95 cursor-pointer transition-all duration-300 uppercase tracking-wider"
+              <label
+                className="text-xs uppercase tracking-[0.3em] text-gray-400"
+                htmlFor="name"
               >
-                Submit
-              </button>
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Enter your name"
+                className="w-full bg-transparent border-b border-gray-600 py-3 mt-1 outline-none focus:border-white transition-colors"
+                required
+              />
             </div>
-          </form>
-        </div>
+            <div>
+              <label
+                className="text-xs uppercase tracking-[0.3em] text-gray-400"
+                htmlFor="email"
+              >
+                E-mail
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="Enter your e-mail"
+                className="w-full bg-transparent border-b border-gray-600 py-3 mt-1 outline-none focus:border-white transition-colors"
+                required
+              />
+            </div>
+          </div>
+
+          {/* Message Input */}
+          <div>
+            <label
+              className="text-xs uppercase tracking-[0.3em] text-gray-400"
+              htmlFor="message"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              placeholder="Your message..."
+              rows="3"
+              className="w-full bg-transparent border-b border-gray-600 py-3 mt-1 outline-none focus:border-white transition-colors resize-none"
+              required
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <div className="self-start mt-4">
+            <button type="submit" className="flex items-center gap-4 group">
+              <span className="bg-white text-black px-8 py-4 font-semibold uppercase tracking-widest transition-transform duration-300 group-hover:scale-105">
+                Let's Connect
+              </span>
+              <span className="flex items-center justify-center w-14 h-14 bg-white rounded-full transition-transform duration-300 group-hover:scale-110">
+                <svg
+                  className="w-6 h-6 text-black"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
 };
 
 export default Contact;
+
+{
+  /* <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-8 sm:mb-10">
+            NEED COOL WORK DONE? LEAVE US A MESSAGE!
+          </p> */
+}

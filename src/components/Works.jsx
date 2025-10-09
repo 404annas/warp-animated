@@ -7,9 +7,9 @@ const Works = () => {
 
   // Define animation groups: center-out
   const groups = [
-    [2],      // R
-    [1, 3],   // O, K
-    [0, 4],   // W, S
+    [2], // R
+    [1, 3], // O, K
+    [0, 4], // W, S
   ];
 
   // Single ref for whole heading
@@ -17,7 +17,10 @@ const Works = () => {
   const inView = useInView(ref, { amount: 0.5, once: true }); // 👈 run once only
 
   return (
-    <section className="bg-[#050505] flex flex-col justify-center items-center px-4">
+    <section
+      id="portfolio"
+      className="bg-[#050505] flex flex-col justify-center items-center px-4"
+    >
       <h1
         ref={ref}
         className="
