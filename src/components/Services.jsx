@@ -17,6 +17,7 @@ import icon3 from "../assets/videoicon3.png";
 import icon4 from "../assets/videoicon4.png";
 
 // --- Data for each face of the cube ---
+// Cube ke har face ka data
 const services = [
   {
     src: icon1,
@@ -55,13 +56,14 @@ const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   // 1. Set up scroll tracking for the section
+  // Section ke liye scroll tracking set karein
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
 
   // 2. Create transformations for cube rotation based on scroll progress
-  // We'll rotate on Y axis for the first two transitions, and on X for the next two
+  // Cube rotation ke liye transformations banayein
   const rotateY = useTransform(
     scrollYProgress,
     [0, 0.25, 0.5, 0.75, 1], // Input scroll progress
@@ -75,6 +77,7 @@ const Services = () => {
   );
 
   // 3. Track the active index based on scroll progress to sync text
+  // Text sync karne ke liye active index ko scroll progress se track karein
   useEffect(() => {
     return scrollYProgress.onChange((latest) => {
       const newIndex = Math.min(
@@ -95,11 +98,16 @@ const Services = () => {
       className="relative bg-black text-white h-[600vh]"
     >
       {/* This div will stick to the center of the viewport */}
-      <div className="sticky  top-0 h-screen flex items-center justify-center overflow-hidden">
+      <div className="sticky 	top-0 h-screen flex items-center justify-center overflow-hidden">
         <div className="max-w-6xl relative w-full mx-auto flex justify-center items-center px-8">
           <motion.div
-            className="flex  justify-between items-center absolute z-10 inset-0 w-[600vw] "
-            style={{ x }}
+            className="flex 	justify-between items-center absolute z-10 inset-0 w-[600vw] "
+            style={{
+              x,
+              // PERFORMANCE FIX 1: Tell browser to use GPU for this large horizontal translation
+              // PERFORMANCE FIX 1: Browser ko is bade horizontal translation ke liye GPU istemal karne ko kahein
+              willChange: 'transform'
+            }}
           >
             {services.map((service, i) => (
               <div key={i} className="w-[330px]">
@@ -132,6 +140,9 @@ const Services = () => {
                 transformStyle: "preserve-3d", // Crucial for 3D
                 rotateY, // Apply the y-rotation from our hook
                 rotateX, // Apply the x-rotation from our hook
+                // PERFORMANCE FIX 2: Tell browser to use GPU for 3D rotation
+                // PERFORMANCE FIX 2: Browser ko 3D rotation ke liye GPU istemal karne ko kahein
+                willChange: 'transform'
               }}
             >
               {/* --- Cube Faces --- */}
@@ -167,7 +178,7 @@ const Services = () => {
 
               {/* Top Face */}
               <div
-                className="absolute w-full  h-full bg-gray-800"
+                className="absolute w-full 	h-full bg-gray-800"
                 style={{
                   transform: `rotateX(90deg) translateZ(${CUBE_SIZE / 2}px)`,
                 }}
@@ -175,7 +186,7 @@ const Services = () => {
                 <img
                   src={services[2].img}
                   alt={services[2].title}
-                  className="w-full h-full rotate-90  object-cover"
+                  className="w-full h-full rotate-90 	object-cover"
                 />
               </div>
 

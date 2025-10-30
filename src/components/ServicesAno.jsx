@@ -41,13 +41,13 @@ const ServicesAno = () => {
                         <motion.span
                             key={i}
                             variants={variant}
-                            initial="hidden"
-                            animate={inView ? "visible" : "hidden"} // 👈 play once
-                            transition={{
-                                duration: 0.8,
-                                delay: groupIndex * 0.2,
-                                ease: "easeOut",
-                            }}
+                            // initial="hidden"
+                            // animate={inView ? "visible" : "hidden"} // 👈 play once
+                            // transition={{
+                            //     duration: 0.8,
+                            //     delay: groupIndex * 0.2,
+                            //     ease: "easeOut",
+                            // }}
                             className="inline-block pt-10"
                         >
                             {letter}
