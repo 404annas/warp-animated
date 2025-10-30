@@ -11,7 +11,7 @@ const OptionButton = ({ label, isSelected, onClick }) => (
               isSelected
                 ? "bg-white text-black"
                 : // Added focus-visible for better accessibility
-                  "bg-transparent text-gray-300 hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  "bg-transparent text-gray-300 hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-white "
             }`}
   >
     {label}
