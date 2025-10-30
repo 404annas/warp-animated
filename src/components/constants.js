@@ -7,7 +7,7 @@ export const SECTIONS_DATA = [
     src: img1,
     text: "Why not meri Jaan",
     direction: "left",
-    color: "#A2FF00",
+    color: "#00C2FF",
   },
   {
     src: img2,
