@@ -73,7 +73,7 @@ const Contact = () => {
               <h3 className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">
                 Email Address
               </h3>
-              <p className="text-lg">hello@gmail.com</p>
+              <a href="mailto:shahrukhkazim@gmail.com" className="text-lg">shahrukhkazim@gmail.com</a>
             </div>
           </div>
         </div>

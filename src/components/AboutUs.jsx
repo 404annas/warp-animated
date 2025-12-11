@@ -2,9 +2,9 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 import brand1 from "../assets/images/brand1.webp";
-import brand2 from "../assets/brand2.webp";
+import brand2 from "../assets/pepsiLogo.png";
 import brand3 from "../assets/brand3.webp";
-import brand4 from "../assets/brand4.webp";
+import brand4 from "../assets/pslLogo.png";
 import brand5 from "../assets/brand5.webp";
 
 const brands = [
@@ -12,15 +12,10 @@ const brands = [
     src: brand1,
     alt: "Brand 1",
   },
-  { src: brand2, alt: "Brand 2" },
-  { src: brand5, alt: "Brand 5" },
   { src: brand3, alt: "Brand 3" },
-  { src: brand4, alt: "Brand 4" },
-  {
-    src: brand1,
-    alt: "Brand 1",
-  },
   { src: brand5, alt: "Brand 5" },
+  { src: brand2, alt: "Brand 2" },
+  { src: brand4, alt: "Brand 4" },
 ];
 
 const AboutUs = () => {
@@ -115,7 +110,7 @@ const AboutUs = () => {
             >
               <img
                 loading="lazy"
-                className="max-w-[70%] max-h-[70%] object-contain"
+                className="max-w-[70%] max-h-[60%] object-contain"
                 src={brand.src}
                 alt={brand.alt}
               />

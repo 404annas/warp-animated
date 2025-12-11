@@ -1,22 +1,32 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png"
+// import logo from "../assets/logo.png"
+import mainLogo from "../assets/fepoLogo3.svg"
+import { Mail } from "lucide-react"
 
 const Navbar = () => {
   return (
     <>
       {/* Top Logo */}
-      <Link to={"/"}>
-        <nav className="absolute top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer">
+      <div>
+        {/* <nav className="absolute top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer">
           <img
             loading="lazy"
-            className="w-12 sm:w-14 md:w-18"
-            src={logo}
+            className="w-12 sm:w-14 md:w-40"
+            src={mainLogo}
             alt="Logo"
           />
-        </nav>
-      </Link>
+        </nav> */}
+        <div className="absolute top-4 sm:top-6 z-50 px-10 flex items-center justify-between text-white w-full">
+          <Link to={"/"}><h1 className="text-xl font-bold uppercase">SHAHRUKH KAZIM</h1></Link>
+          <a href="mailto:shahrukhkazim@gmail.com" className="flex items-center justify-center gap-2">
+            <Mail size={20} />
+            <p>shahrukhkazim@gmail.com</p>
+          </a>
+        </div>
+
+      </div>
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-4 sm:bottom-5 left-1/2 transform -translate-x-1/2 z-50 w-full">
