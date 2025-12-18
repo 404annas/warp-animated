@@ -57,10 +57,10 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="flex flex-col sm:flex-row items-center justify-between text-[#5A5A5A] pt-6 gap-4 sm:gap-0 text-sm">
+        <p className="text-center sm:text-right z-50">Powered By <a className="text-gray-400" href="https://techxudo.com/" target="_blank">Techxudo</a></p>
         <p className="text-center sm:text-left">
           © 2025 Shahrukh Kazim. All Rights Reserved.
         </p>
-        <p className="text-center sm:text-right">Powered By Techxudo</p>
       </div>
     </footer>
   );
