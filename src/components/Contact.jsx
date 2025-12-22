@@ -65,7 +65,7 @@ const Contact = () => {
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8">
         {/* Left Section: Contact Info */}
         <div className="flex flex-col justify-between">
-          <h1 className="text-7xl sm:text-8xl font-thin leading-none">
+          <h1 className="text-6xl sm:text-8xl font-thin leading-none">
             Contact us
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 lg:mt-0">
@@ -98,7 +98,7 @@ const Contact = () => {
           </div>
 
           {/* Budget Selection */}
-          <div>
+          {/* <div>
             <h3 className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4">
               Budget
             </h3>
@@ -113,7 +113,6 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* NEW: Conditionally rendered custom budget input */}
             <AnimatePresence>
               {selectedBudget === "Custom" && (
                 <motion.div
@@ -142,7 +141,7 @@ const Contact = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </div> */}
 
           {/* Name and Email Inputs */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
