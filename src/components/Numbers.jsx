@@ -38,7 +38,7 @@ const Numbers = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-[#ADADAD] max-w-2xl md:translate-x-14 mdtranslate-y-10 font-extralight text-xs sm:text-base text-center lg:text-left mx-auto lg:mx-0"
+            className="text-[#ADADAD] max-w-2xl md:translate-x-14 mdtranslate-y-10 font-extralight text-base md:text-xl sm:text-lg text-center lg:text-left mx-auto lg:mx-0"
           >
             FEPO, a production company that has grown into a creative powerhouse
             of over 200 collaborators — editors, directors, designers, and

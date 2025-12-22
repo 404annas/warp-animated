@@ -18,9 +18,9 @@ const Navbar = () => {
             alt="Logo"
           />
         </nav> */}
-        <div className="absolute top-4 sm:top-6 z-50 px-10 flex flex-col sm:flex-row gap-2 items-left sm:items-center justify-between text-white w-full">
+        <div className="absolute top-4 sm:top-6 z-50 px-10 flex flex-col sm:flex-row gap-2 items-center justify-between text-white w-full">
           <Link to={"/"}><h1 className="text-lg sm:text-xl font-bold uppercase">SHAHRUKH KAZIM</h1></Link>
-          <a href="mailto:shahrukhkazim@gmail.com" target="_blank" className="flex items-center justify-center mr-20 gap-2">
+          <a href="mailto:shahrukhkazim@gmail.com" target="_blank" className="flex items-center justify-center gap-2">
             <Mail size={20} />
             <p className="sm:text-base text-sm">shahrukhkazim@gmail.com</p>
           </a>
