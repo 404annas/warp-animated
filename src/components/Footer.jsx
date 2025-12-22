@@ -13,7 +13,7 @@ const Footer = () => {
             src="https://vision-animated.vercel.app/assets/logo-Cup0Xx9b.png"
             alt="Logo"
           /> */}
-          <h1 className="text-6xl font-bold">Shahrukh Kazim</h1>
+          <h1 className="text-5xl sm:text-6xl font-bold uppercase">Shahrukh Kazim</h1>
           <p className="max-w-xs text-[#5A5A5A] mx-auto md:mx-0">
             The visionary behind the lens.
           </p>

@@ -20,7 +20,7 @@ const Navbar = () => {
         </nav> */}
         <div className="absolute top-4 sm:top-6 z-50 px-10 flex flex-col sm:flex-row gap-2 items-left sm:items-center justify-between text-white w-full">
           <Link to={"/"}><h1 className="text-lg sm:text-xl font-bold uppercase">SHAHRUKH KAZIM</h1></Link>
-          <a href="mailto:shahrukhkazim@gmail.com" target="_blank" className="flex items-center justify-center gap-2">
+          <a href="mailto:shahrukhkazim@gmail.com" target="_blank" className="flex items-center justify-center mr-20 gap-2">
             <Mail size={20} />
             <p className="sm:text-base text-sm">shahrukhkazim@gmail.com</p>
           </a>
@@ -30,7 +30,7 @@ const Navbar = () => {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-4 sm:bottom-5 left-1/2 transform -translate-x-1/2 z-50 w-full">
-        <ul className="flex justify-center flex-wrap gap-2 sm:gap-4 bg-[#0A0A0A] backdrop-blur-md px-4 py-2 sm:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium border border-[#171717] max-w-max mx-auto">
+        <ul className="flex justify-center flex-wrap gap-2 sm:gap-4 bg-[#0A0A0A] backdrop-blur-md px-2 sm:px-4 py-2 sm:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium border border-[#171717] max-w-max mx-auto">
           <HashLink smooth to="/#home">
             <li className="hover:text-black text-white cursor-pointer uppercase font-light transition hover:bg-[#E7E7E9] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
               Home

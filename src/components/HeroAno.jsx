@@ -61,7 +61,7 @@ const HeroAno = () => {
     ];
 
     return (
-        <div className="bg-[#050505] flex flex-col items-center justify-center min-h-screen px-4 pt-32 pb-20">
+        <div className="bg-[#050505] flex flex-col items-center justify-center min-h-screen px-6 pt-32 pb-20">
             <AnimatePresence>
                 {hoveredImg && (
                     <motion.div
