@@ -44,7 +44,7 @@ const Works = () => {
               key={i}
               variants={variant}
               initial="hidden"
-              animate={inView ? "visible" : "hidden"} // 👈 trigger only first time
+              animate={inView ? "visible" : "hidden"}
               transition={{
                 duration: 0.8,
                 delay: groupIndex * 0.2,

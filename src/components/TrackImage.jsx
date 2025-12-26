@@ -13,7 +13,6 @@ const TrackImage = ({
 }) => {
   const ref = useRef(null);
 
-  // Is image ke liye scroll progress track karo
   const { scrollYProgress } = useScroll({
     target: ref,
     // Ye sabse important part hai
