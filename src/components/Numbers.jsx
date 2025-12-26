@@ -9,7 +9,7 @@ import logo3 from "../assets/logo3.svg"
 const Numbers = () => {
   const { ref, inView } = useInView({
     triggerOnce: true, // run once
-    threshold: 0.5, // 50% visible
+    threshold: 0.4, // 50% visible
   });
 
   return (
